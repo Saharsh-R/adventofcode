@@ -1,2 +1,5 @@
 [tool.pylint.messages_control]
 disable = ["missing-module-docstring"]
+
+[tool.pytest.ini_options]
+addopts = "--cache-clear"
