@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"ms-python.black-formatter",
+		"formulahendry.code-runner",
+		"usernamehw.errorlens",
+		"ms-python.vscode-pylance",
+		"ms-python.pylint",
+		"ms-python.python"
+	]
+}
