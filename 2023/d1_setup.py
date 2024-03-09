@@ -18,3 +18,4 @@ if response.status_code == 200:
         print("Data written to file successfully")
 else:
     print(f"Failed to fetch data, status code: {response.status_code}")
+    print(f"Error reason: {response.reason}")
