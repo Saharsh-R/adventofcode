@@ -9,7 +9,7 @@ def test_pathlib():
     file_path = current_dir / "d1_input.txt"
     assert file_path.exists()
     assert isinstance(file_path.name, str)
-    assert str(file_path).endswith("2023/1/d1_input.txt")
+    assert str(file_path).endswith("y2023/d1/d1_input.txt")
 
 
 def test_str_endswith():
@@ -26,7 +26,7 @@ def test_default_behaviour_pathlib():
     '''
     current_path = Path(__file__)
     assert current_path.exists()
-    assert str(current_path).endswith("2023/1/tests/test_d1_pathlib.py")
+    assert str(current_path).endswith("2023/d1/tests/test_python_pathlib.py")
 
 
 def test_default_behaviour_pathlib_resolve():
@@ -35,5 +35,5 @@ def test_default_behaviour_pathlib_resolve():
     '''
     current_path = Path(__file__).resolve()
     assert current_path.exists()
-    assert str(current_path).endswith("2023/1/tests/test_d1_pathlib.py")
+    assert str(current_path).endswith("2023/d1/tests/test_python_pathlib.py")
 
