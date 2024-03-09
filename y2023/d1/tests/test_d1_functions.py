@@ -1,6 +1,7 @@
 import pytest
 from ..d1 import parse_value_from_string
 
+
 @pytest.mark.parametrize(
     "input_string, expected_digit",
     [
@@ -12,6 +13,10 @@ from ..d1 import parse_value_from_string
         ("4nineeightseven2", 42),
         ("zoneight234", 14),
         ("7pqrstsixteen", 76),
+        ("7pqrstsixteen", 76),
+        ("onetwo3", 13),
+        ("1onetwo3fivezone", 11),
+        ("twone", 21),
     ],
 )
 def test_parse_value_from_string(input_string, expected_digit):
