@@ -22,6 +22,7 @@ def regex_matches(
     last = str(matches[-1]) if matches[-1].isdigit() else matches[-1]
     return first + last
 
+
 number_to_digit = {
     "one": 1,
     "two": 2,
@@ -31,7 +32,7 @@ number_to_digit = {
     "six": 6,
     "seven": 7,
     "eight": 8,
-    "nine": 9
+    "nine": 9,
 }
 
 
@@ -41,11 +42,15 @@ def parse_value_from_string(string: str) -> int:
     and returns the two digit numbe
     """
 
-    matches: list[str] = re.findall(
-        r"\d|one|two|three|four|five|six|seven|eight|nine", string
+    overlapping_regex = r"(?=(\d|one|two|three|four|five|six|seven|eight|nine))"
+    matches = [match.group(1) for match in re.finditer(overlapping_regex, string)]
+
+    first = (
+        str(matches[0]) if matches[0].isdigit() else str(number_to_digit[matches[0]])
     )
-    first = str(matches[0]) if matches[0].isdigit() else str(number_to_digit[matches[0]])
-    last = str(matches[-1]) if matches[-1].isdigit() else str(number_to_digit[matches[-1]])
+    last = (
+        str(matches[-1]) if matches[-1].isdigit() else str(number_to_digit[matches[-1]])
+    )
     return int(first + last)
 
 
