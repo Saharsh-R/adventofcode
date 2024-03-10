@@ -1,9 +1,10 @@
 import re
-from collections import Counter, defaultdict
+from collections import defaultdict
 from functools import reduce
 import operator
 
 from ..generic_functions import obtain_lines
+
 
 def get_numbers(input_line: str) -> list[re.Match]:
     """

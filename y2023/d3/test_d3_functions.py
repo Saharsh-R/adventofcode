@@ -1,4 +1,3 @@
-from pathlib import Path
 from ..generic_functions import obtain_lines
 from .d3 import give_result, give_result_part2
 import pytest
