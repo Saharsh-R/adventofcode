@@ -6,7 +6,6 @@ def test_overlapping_matches():
 
     pattern = r"(?=(two|one))"
     string = "twone"
-    sub_step = re.finditer(pattern, string)
 
     matches = [match.group(1) for match in re.finditer(pattern, string)]
     assert matches == ["two", "one"]
@@ -59,9 +58,9 @@ def test_match():
 
 
 def test_group_match():
-    '''
+    """
     test multiple group match
-    '''
+    """
     pattern = r"(\d)(\d)(\d)"
     string = "abc123def"
 
