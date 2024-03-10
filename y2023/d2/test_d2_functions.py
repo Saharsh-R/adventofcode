@@ -17,7 +17,7 @@ def test_get_game_data():
         ("  3 green, 4 blue, 1 red   ", True),
         ("  3 green, 4 blue, 13 red   ", False),
         ("  14 green, 4 blue, 1 red   ", False),
-        ("  3 green, 14 blue, 1 red   ", False),
+        ("  3 green, 15 blue, 1 red   ", False),
     ],
 )
 def test_valid_game(input_game, expected_output):

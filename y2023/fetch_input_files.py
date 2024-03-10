@@ -11,7 +11,7 @@ cookies = {"session": os.getenv("AOC_SESSION_COOKIE")}
 
 parent_dir = Path(__file__).resolve().parent
 
-for day in range(1, 26):
+for day in [2]:
     response = requests.get(
         f"https://adventofcode.com/2023/day/{day}/input", cookies=cookies, timeout=5
     )
