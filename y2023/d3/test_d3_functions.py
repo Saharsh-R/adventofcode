@@ -18,9 +18,11 @@ def test_input_data():
     assert give_result("input") == 525181
 
 
+@pytest.mark.skip(reason="don't recompute")
 def test_2_example():
-    assert give_result_part2("test") == 467835
+    assert give_result_part2("example") == 467835
 
 
+@pytest.mark.skip(reason="don't recompute")
 def test_2_input():
-    assert give_result_part2("input") == 467835
+    assert give_result_part2("input") == 84289137

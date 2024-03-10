@@ -1,7 +1,9 @@
-from ..generic_functions import obtain_lines
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
+from functools import reduce
+import operator
 
+from ..generic_functions import obtain_lines
 
 def get_numbers(input_line: str) -> list[re.Match]:
     """
@@ -90,4 +92,29 @@ def give_result_part2(path: str) -> int:
     """
     input_lines = obtain_lines(path)
 
-    return 0
+    number_data: defaultdict[int, list[re.Match]] = defaultdict(list)
+    for i, line in enumerate(input_lines):
+        number_data[i] = get_numbers(line)
+
+    ans = 0
+
+    for i, line in enumerate(input_lines):
+        symbol_matches = get_symbol(line)
+        for match in symbol_matches:
+            y_index = match.start()
+            gears: list[str] = []
+            for x in (i - 1, i, i + 1):
+                if len(gears) == 3:
+                    break
+                for number_match in number_data[x]:
+                    if (
+                        number_match.start() <= y_index + 1
+                        and y_index - 1 <= number_match.end() - 1
+                    ):
+                        gears.append(number_match.group())
+                        if len(gears) == 3:
+                            break
+            if len(gears) == 2:
+                ans += reduce(operator.mul, map(int, gears), 1)
+
+    return ans
