@@ -14,15 +14,6 @@ def parse_value_from_string_old(string: str) -> int:
     return int(first_occ + last_occ)
 
 
-def regex_matches(
-    string: str, regex: str = r"\d|one|two|three|four|five|six|seven|eight|nine"
-):
-    matches: list[str] = re.findall(regex, string)
-    first = str(matches[0]) if matches[0].isdigit() else matches[0]
-    last = str(matches[-1]) if matches[-1].isdigit() else matches[-1]
-    return first + last
-
-
 number_to_digit = {
     "one": 1,
     "two": 2,
