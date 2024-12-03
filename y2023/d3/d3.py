@@ -3,7 +3,7 @@ from collections import defaultdict
 from functools import reduce
 import operator
 
-from ..generic_functions import obtain_lines
+from utils.generic_functions import obtain_lines
 
 
 def get_numbers(input_line: str) -> list[re.Match]:
@@ -56,7 +56,7 @@ def give_result(path: str) -> int:
     for x in valid:
         print(*("T" if y else "." for y in x), sep="")
     # pylint: disable=pointless-string-statement
-    """ 
+    """
     following is the output of the above print statement
 
     ..TTT.....
