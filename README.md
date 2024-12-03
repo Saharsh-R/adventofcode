@@ -1,13 +1,15 @@
 # [adventofcode](https://adventofcode.com/2023)
 
+## Install all dependencies
 ```
 python3.12 -m pip install -r requirements.txt
 ```
 
-Delete all pycache
+## Fetch particular day
 ```
-find . -type d -name __pycache__ -exec rm -r {} +
+python3.12 main.py fetch 2 --year 2024
 ```
+The above command will fetch day 2 for year 2024
 
 ### NOTES
 - Code should automatically format on save
