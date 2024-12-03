@@ -39,4 +39,4 @@ def test_similarity(input_file):
     ans = 0
     for x in a:
         ans += x * b[x]
-    assert ans == 0
+    assert ans == 23655822
