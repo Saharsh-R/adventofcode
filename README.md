@@ -1,7 +1,7 @@
 # [adventofcode](https://adventofcode.com/2023)
 
 ```
-python3 -m pip install python-dotenv
+python3.12 -m pip install -r requirements.txt
 ```
 
 Delete all pycache
