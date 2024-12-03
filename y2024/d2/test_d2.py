@@ -1,8 +1,9 @@
 import pytest
 from utils.generic_functions import obtain_lines
 
-def is_safe(input: str) -> bool:
-    l = list(map(int, input.split()))
+def is_safe(l: list[int]|str) -> bool:
+    if isinstance(l, str):
+        l = list(map(int, l.split()))
     positive = False
     negative = False
     for a, b in zip(l[::], l[1::]):
@@ -19,6 +20,8 @@ def is_safe(input: str) -> bool:
 def is_less_safe(input: str) -> bool:
     if is_safe(input):
         return True
+    input = list(map(int, input.split()))
+
     for i in range(len(input)):
         l = input[:i] + input[i+1:]
         if is_safe(l):
@@ -70,4 +73,4 @@ def test_d3_24_p2():
     for x in obtain_lines():
         if is_less_safe(x):
             ans += 1
-    assert ans == 666
+    assert ans == 692
