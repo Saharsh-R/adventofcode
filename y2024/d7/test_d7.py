@@ -86,7 +86,7 @@ def test_can_happen(a, b, output):
 
 @pytest.mark.parametrize("input, output", [
     (PARSED_TEST, 11387),
-    ([parse_input(s) for s in obtain_lines()], 0)
+    ([parse_input(s) for s in obtain_lines()], 95297119227552)
     ])
 def test_p1_d7_24(input, output):
     ans = 0
