@@ -13,29 +13,26 @@ def test_pathlib():
 
 
 def test_str_endswith():
-    '''
+    """
     to test the endswith method of string
-    '''
+    """
     a = "2023/1/d1_input.txt"
     assert a.endswith("d1_input.txt")
 
 
 def test_default_behaviour_pathlib():
-    '''
+    """
     when resolve is not called it is relative path
-    '''
+    """
     current_path = Path(__file__)
     assert current_path.exists()
     assert str(current_path).endswith("2023/d1/tests/test_python_pathlib.py")
 
 
 def test_default_behaviour_pathlib_resolve():
-    '''
+    """
     when resolve is called it is absolute path
-    '''
+    """
     current_path = Path(__file__).resolve()
     assert current_path.exists()
     assert str(current_path).endswith("2023/d1/tests/test_python_pathlib.py")
-
-
-

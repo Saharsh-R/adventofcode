@@ -70,12 +70,15 @@ parent_dir = Path(__file__).resolve().parent
 input_file = parent_dir / f"{parent_dir.name}_input.txt"
 
 
-def perform_operation(file_path: Path, part2 = False) -> int:
+def perform_operation(file_path: Path, part2=False) -> int:
     """
     takes the file path and returns the sum of the two digit numbers
     """
     with file_path.open("r", encoding="utf-8") as file:
-        return sum(get_game_power(line) if part2 else get_game_id_if_valid(line) for line in file)
+        return sum(
+            get_game_power(line) if part2 else get_game_id_if_valid(line)
+            for line in file
+        )
 
 
 # print(perform_operation(input_file)) # 2237

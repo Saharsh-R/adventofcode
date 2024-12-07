@@ -10,9 +10,8 @@ def hello(name: str):
 
 
 @app.command()
-def fetch(day: int, year: int = 2024 ):
-    '''
+def fetch(day: int, year: int = 2024):
+    """
     Gets the input file corresponding to day and year and saves it to the correct path.
-    '''
+    """
     write_input_file(year, day)
-

@@ -1,7 +1,8 @@
 import pytest
 from utils.generic_functions import obtain_lines
 
-def is_safe(l: list[int]|str) -> bool:
+
+def is_safe(l: list[int] | str) -> bool:
     if isinstance(l, str):
         l = list(map(int, l.split()))
     positive = False
@@ -13,9 +14,10 @@ def is_safe(l: list[int]|str) -> bool:
             positive = True
         else:
             negative = True
-        if not( 1 <= abs(b - a) <= 3):
+        if not (1 <= abs(b - a) <= 3):
             return False
     return positive ^ negative
+
 
 def is_less_safe(input: str) -> bool:
     if is_safe(input):
@@ -23,13 +25,13 @@ def is_less_safe(input: str) -> bool:
     input = list(map(int, input.split()))
 
     for i in range(len(input)):
-        l = input[:i] + input[i+1:]
+        l = input[:i] + input[i + 1 :]
         if is_safe(l):
             return True
     return False
 
-
     # return any(is_safe(input[:i] + input[i + 1:]) for i in range(len(input)))
+
 
 @pytest.mark.parametrize(
     "level, safe",
@@ -52,6 +54,7 @@ def test_d3_24():
         if is_safe(x):
             ans += 1
     assert ans == 663
+
 
 @pytest.mark.parametrize(
     "level, safe",

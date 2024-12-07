@@ -26,7 +26,7 @@ def test_iter_regex():
 
 def test_regex_negative_match():
     line = "232..23+.a*"
-    regex_pattern = r'[^\d.]'
+    regex_pattern = r"[^\d.]"
     findall_result = re.findall(regex_pattern, line)
     assert findall_result == ["+", "a", "*"]
 

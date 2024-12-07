@@ -20,7 +20,7 @@ def write_input_file(year: int, day: int):
         verify=False,
     )
     if response.status_code == 200:
-        file_path = parent_dir /f'y{year}' /f"d{day}" / f"d{day}_input.txt"
+        file_path = parent_dir / f"y{year}" / f"d{day}" / f"d{day}_input.txt"
         file_path.parent.mkdir(parents=True, exist_ok=True)
 
         with open(file_path, "w", encoding="utf-8") as file:

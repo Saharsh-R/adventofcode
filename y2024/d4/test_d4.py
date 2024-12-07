@@ -103,7 +103,6 @@ def get_xmas_straight(mat: list[str]) -> int:
 
 
 def get_crosses(mat: list[str]) -> int:
-
     def is_cross(i: int, j: int) -> bool:
         checks = [
             [(0, 0, "M"), (0, 2, "S"), (1, 1, "A"), (2, 0, "M"), (2, 2, "S")],
@@ -111,7 +110,8 @@ def get_crosses(mat: list[str]) -> int:
             [(0, 0, "S"), (0, 2, "S"), (1, 1, "A"), (2, 0, "M"), (2, 2, "M")],
             [(0, 0, "M"), (0, 2, "M"), (1, 1, "A"), (2, 0, "S"), (2, 2, "S")],
         ]
-        def is_all_good(check)-> bool:
+
+        def is_all_good(check) -> bool:
             for dx, dy, c in check:
                 if mat[i + dx][j + dy] != c:
                     return False
@@ -138,6 +138,7 @@ def get_crosses(mat: list[str]) -> int:
 )
 def test_get_xmas(mat, ans):
     assert get_xmas_straight(mat) == ans
+
 
 @pytest.mark.parametrize(
     "mat, ans", [(SAMPE_TEST_CASE, 9), (SAMPLE_TEST_2, 0), (obtain_lines(), 1945)]

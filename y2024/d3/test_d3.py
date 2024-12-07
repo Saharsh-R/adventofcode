@@ -42,12 +42,16 @@ def test_value_extractor():
     assert extract_value("mul(923,3)") == (923, 3)
 
 
-def regex_extractor(input: str, is_p2:bool= False) -> list[tuple[int, int]]:
+def regex_extractor(input: str, is_p2: bool = False) -> list[tuple[int, int]]:
     return [extract_value(x) for x in get_p2_matches(input)]
 
 
 @pytest.mark.parametrize(
-    "input, output", [("mul(2,4),zzzzmul(89,323)", [(2, 4), (89, 323)]), ("do()mul(2,4)", [True,(2,4)])]
+    "input, output",
+    [
+        ("mul(2,4),zzzzmul(89,323)", [(2, 4), (89, 323)]),
+        ("do()mul(2,4)", [True, (2, 4)]),
+    ],
 )
 def test_match_regex(input, output):
     assert regex_extractor(input) == output

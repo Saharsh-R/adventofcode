@@ -3,7 +3,6 @@ import pytest
 
 
 def test_overlapping_matches():
-
     pattern = r"(?=(two|one))"
     string = "twone"
 

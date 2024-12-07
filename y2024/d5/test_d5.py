@@ -11,11 +11,12 @@ def get_test_cases():
     lines = []
 
     for s in obtain_lines():
-        if '|' in s:
-            order.append(list(map(int, s.split('|'))))
+        if "|" in s:
+            order.append(list(map(int, s.split("|"))))
         elif s:
-            lines.append(list(map(int, s.split(','))))
+            lines.append(list(map(int, s.split(","))))
     return order, lines
+
 
 def test_input():
     order, lines = get_test_cases()
@@ -24,6 +25,7 @@ def test_input():
     for x in lines:
         assert len(x) % 2 == 1
         assert len(set(x)) == len(x)
+
 
 def get_mid(l: list[int]) -> int:
     return l[len(l) // 2]
@@ -36,6 +38,7 @@ def is_line_correct(l: list[int], orders) -> bool:
             if l.index(a) > l.index(b):
                 return False
     return True
+
 
 def test_get_mid():
     assert get_mid([1, 2, 3, 4, 5]) == 3
@@ -51,16 +54,14 @@ def test_d5_24_p1():
     assert ans == 0
 
 
-
-
-def topo_sort(orders: list[tuple[int, int]], line: list[int])->list[int]:
+def topo_sort(orders: list[tuple[int, int]], line: list[int]) -> list[int]:
     pre: defaultdict[int, set[int]] = defaultdict(set)
     nex: defaultdict[int, set[int]] = defaultdict(set)
     for a, b in orders:
         pre[b].add(a)
         nex[a].add(b)
-    q:deque[int] = deque()
-    ans :list[int]= []
+    q: deque[int] = deque()
+    ans: list[int] = []
     for x in line:
         if not pre[x]:
             q.append(x)
@@ -75,9 +76,12 @@ def topo_sort(orders: list[tuple[int, int]], line: list[int])->list[int]:
     assert len(ans) == len(line)
     return ans
 
-def get_useful_orders(orders: list[tuple[int, int]], line:list[int]) ->list[tuple[int, int]]:
+
+def get_useful_orders(
+    orders: list[tuple[int, int]], line: list[int]
+) -> list[tuple[int, int]]:
     store = set(line)
-    return [(a,b) for a, b in orders if (a in store and b in store)]
+    return [(a, b) for a, b in orders if (a in store and b in store)]
 
 
 def test_d5_24_p2():
@@ -90,4 +94,3 @@ def test_d5_24_p2():
         corrected = topo_sort(filtered, x)
         ans += get_mid(corrected)
     assert ans == 0
-
