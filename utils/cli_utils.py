@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 def get_current_day_if_advent_else_1() -> int:
     today = datetime.today()
     if today.month != 12:

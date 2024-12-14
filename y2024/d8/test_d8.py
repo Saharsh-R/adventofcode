@@ -35,18 +35,18 @@ from utils.generic_functions import obtain_lines
 
 
 TEST_CASE = [
-"............",
-"........0...",
-".....0......",
-".......0....",
-"....0.......",
-"......A.....",
-"............",
-"............",
-"........A...",
-".........A..",
-"............",
-"............",
+    "............",
+    "........0...",
+    ".....0......",
+    ".......0....",
+    "....0.......",
+    "......A.....",
+    "............",
+    "............",
+    "........A...",
+    ".........A..",
+    "............",
+    "............",
 ]
 
 
@@ -87,15 +87,16 @@ def get_unique_p2(mat: list[str]):
             if c != ".":
                 store[c].append((i, j))
     nodes: set[tuple[int, int]] = set()
-    def expand(x1, y1, x2, y2)-> set[tuple[int, int]]:
+
+    def expand(x1, y1, x2, y2) -> set[tuple[int, int]]:
         ans = set()
         dx = x2 - x1
         dy = y2 - y1
         r = 1
-        '''
+        """
         a  x1  x2
           x1 - d   d
-        '''
+        """
         ans.add((x1, y1))
         while True:
             a = x1 - r * dx
@@ -108,9 +109,6 @@ def get_unique_p2(mat: list[str]):
                 break
         return ans
 
-
-
-
     for c in store:
         for combi in combinations(store[c], 2):
             (x1, y1), (x2, y2) = combi
@@ -118,6 +116,7 @@ def get_unique_p2(mat: list[str]):
             nodes |= expand(x2, y2, x1, y1)
 
     return len(nodes)
+
 
 def test_d7_24_p2():
     assert get_unique_p2(TEST_CASE) == 34

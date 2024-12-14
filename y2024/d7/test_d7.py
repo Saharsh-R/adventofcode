@@ -35,6 +35,7 @@ def can_happen_p1(value: int, digits: list[int]) -> bool:
 
     return back(digits[0], 1)
 
+
 def can_happen(value: int, digits: list[int]) -> bool:
     n = len(digits)
 
@@ -65,6 +66,7 @@ def can_happen(value: int, digits: list[int]) -> bool:
 def test_can_happen(a, b, output):
     assert can_happen_p1(a, b) == output
 
+
 @pytest.mark.parametrize(
     "a,b,output",
     [
@@ -83,15 +85,13 @@ def test_can_happen(a, b, output):
     assert can_happen(a, b) == output
 
 
-
-@pytest.mark.parametrize("input, output", [
-    (PARSED_TEST, 11387),
-    ([parse_input(s) for s in obtain_lines()], 95297119227552)
-    ])
+@pytest.mark.parametrize(
+    "input, output",
+    [(PARSED_TEST, 11387), ([parse_input(s) for s in obtain_lines()], 95297119227552)],
+)
 def test_p1_d7_24(input, output):
     ans = 0
     for a, b in input:
         if can_happen(a, b):
             ans += a
     assert ans == output
-

@@ -47,7 +47,7 @@ def paint_mat(mat_ori: list[list[str]]) -> list[list[str]]:
             di = (di + 1) % 4
             dx, dy = direction[di]
             z += 1
-            if z== 5:
+            if z == 5:
                 assert False
         a += dx
         b += dy
@@ -81,10 +81,7 @@ def test_d6_24_p1(input, output):
 
 @pytest.mark.parametrize(
     "input, output",
-    [
-        (ZOO_INPUT, 6),
-        (obtain_lines(), 0)
-    ],
+    [(ZOO_INPUT, 6), (obtain_lines(), 0)],
 )
 def test_d6_24_p2(input, output):
     input = [list(s) for s in input]
@@ -92,12 +89,9 @@ def test_d6_24_p2(input, output):
     ans = 0
     for i in range(n):
         for j in range(m):
-            if input[i][j] == '.':
-                input[i][j] = '#'
+            if input[i][j] == ".":
+                input[i][j] = "#"
                 if paint_mat(input) == False:
                     ans += 1
-                input[i][j] ='.'
+                input[i][j] = "."
     assert ans == output
-
-
-
