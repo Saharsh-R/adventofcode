@@ -22,14 +22,14 @@ def write_input_file(year: int, day: int):
     if response.status_code == 200:
         dev_dir = parent_dir / f"y{year}" / f"d{day}"
         input_file_path = dev_dir / f"input.txt"
-        code_path = parent_dir / f"test_d{day}_y{year}.py"
+        code_path = dev_dir / f"test_d{day}_y{year}.py"
         input_file_path.parent.mkdir(parents=True, exist_ok=True)
 
-        test_case_file = parent_dir / "1.txt"
+        test_case_file = dev_dir / "1.txt"
 
         with open(input_file_path, "w", encoding="utf-8") as file:
             file.write(response.text)
-            print(f"Data of day {day}, year {year} written to file successfully")
+            print(f"Data of day {day}, year {year} written to file successfully to {input_file_path}")
         if not code_path.exists():
             with open(code_path, "w", encoding="utf-8") as code_file:
                 code_file.write(f"""# Day {day}, Year {year}
