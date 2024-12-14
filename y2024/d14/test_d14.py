@@ -1,5 +1,4 @@
 import re
-from typing import Literal
 import pytest
 import os
 from utils.generic_functions import obtain_lines
