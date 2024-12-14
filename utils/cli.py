@@ -15,7 +15,9 @@ def hello(name: str):
 
 @app.command()
 def fetch(
-    day: Annotated[Optional[int], typer.Argument()] = get_current_day_if_advent_else_1(),
+    day: Annotated[
+        Optional[int], typer.Argument(min=1, max=25)
+    ] = get_current_day_if_advent_else_1(),
     year: Annotated[Optional[int], typer.Argument()] = get_current_year(),
 ):
     """
