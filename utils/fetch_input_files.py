@@ -68,5 +68,5 @@ def test_d{day}_y{year}_p2(day_input: list[str], output: int):
 
         print(f"Code at {code_path}")
     else:
-        print(f"Failed to fetch data, status code: {response.status_code}")
+        print(f"Failed to fetch data for day {day}, year {year} , status code: {response.status_code}")
         print(f"Error reason: {response.reason}")
