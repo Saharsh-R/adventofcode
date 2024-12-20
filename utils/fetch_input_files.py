@@ -13,6 +13,7 @@ parent_dir = Path(__file__).resolve().parent.parent
 
 
 def write_input_file(year: int, day: int):
+    assert year > 2000, f"The input year is {year}, please provide 4 digit year"
     response = requests.get(
         f"https://adventofcode.com/{year}/day/{day}/input",
         cookies=cookies,
@@ -26,6 +27,8 @@ def write_input_file(year: int, day: int):
         input_file_path.parent.mkdir(parents=True, exist_ok=True)
 
         test_case_file = dev_dir / "1.txt"
+        print()
+        print(f'Question at https://adventofcode.com/{year}/day/{day}')
 
         with open(input_file_path, "w", encoding="utf-8") as file:
             file.write(response.text)
