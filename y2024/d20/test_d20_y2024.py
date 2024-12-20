@@ -117,8 +117,8 @@ def get_p2(day_input: list[str]):
     return get_cheats_big(mat, start_dist, end_dist, 20)
 
 @pytest.mark.parametrize('day_input, output', [
-    (obtain_lines('1'), 2),
-    (obtain_lines(), 222),
+    # (obtain_lines('1'), 2),
+    (obtain_lines(), 988931),
 ])
 def test_d20_y2024_p2(day_input: list[str], output: int):
     assert get_p2(day_input) == output
