@@ -10,5 +10,5 @@
 		"**/__pycache__": true,
 		"**/.pytest_cache": true
 	},
-	"github.copilot.editor.enableAutoCompletions": false
+	"github.copilot.editor.enableAutoCompletions": true
 }
