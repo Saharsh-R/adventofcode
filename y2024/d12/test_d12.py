@@ -1,5 +1,4 @@
 from collections import defaultdict
-from numpy.char import isupper
 import pytest
 
 from utils.generic_functions import obtain_lines

@@ -1,4 +1,3 @@
-from pyparsing import deque
 import pytest
 
 from utils.generic_functions import obtain_lines

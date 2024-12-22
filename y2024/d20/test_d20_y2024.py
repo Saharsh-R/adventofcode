@@ -5,7 +5,6 @@
 from collections import Counter, defaultdict
 from heapq import heappop, heappush
 from math import inf
-from pyparsing import deque
 import pytest
 
 from utils.generic_functions import obtain_lines
