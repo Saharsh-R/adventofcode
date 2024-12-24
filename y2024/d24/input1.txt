@@ -236,7 +236,7 @@ y05 AND x05 -> srp
 kkh AND bsb -> kgw
 rks OR trv -> htm
 frn AND ghf -> mgg
-qjq XOR kbj -> frn
+qjq XOR kbj -> z05
 knf XOR vgs -> z27
 y09 AND x09 -> vmw
 x36 AND y36 -> dbc
@@ -308,6 +308,6 @@ shm XOR tmd -> z11
 y24 XOR x24 -> fnh
 x11 AND y11 -> skj
 x10 AND y10 -> fgc
-srp OR jcf -> z05
+srp OR jcf -> frn 
 y12 AND x12 -> sqg
 y18 XOR x18 -> hvs
